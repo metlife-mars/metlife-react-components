@@ -1,0 +1,169 @@
+//========================================
+// Tabs
+//========================================
+
+// @import '../../../node_modules/react-tabs/style/react-tabs.scss';
+/* ===================================================================== */
+
+.ui-tabs,
+.react-tabs {
+  position: relative;
+  /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+}
+
+.ui-tabs .ui-tabs-nav,
+.react-tabs .react-tabs__tab-list
+{
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: #e9e9e9;
+  &:before {
+    content: "";
+    display: table;
+    border-collapse: collapse;
+  }
+  &:after {
+    content: "";
+    display: table;
+    border-collapse: collapse;
+    clear: both;
+  }
+}
+
+.ui-tabs .ui-tabs-nav li,
+.react-tabs .react-tabs__tab-list li
+{
+  list-style: none;
+  float: left;
+  position: relative;
+  top: 15px;
+  margin-left: 5px;
+  border-bottom-width: 0;
+  white-space: nowrap;
+  background: #007ABC;
+  border: 0px;
+  border-radius: 0 5px 0 0;
+  height: 35px;
+  outline: 0;
+
+  &:focus { // for a11y Focus Indicators
+    .react-tabs__anchor {
+      outline-color: #007ABC;
+      outline-style: auto;
+    }
+  }
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor,
+.react-tabs .react-tabs__tab-list .react-tabs__anchor /* @TODO */
+{
+  float: left;
+  padding: 0 25px 0 25px;
+  line-height: 35px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active,
+.react-tabs .react-tabs__tab-list li.react-tabs__tab--selected
+{
+  top: 10px;
+  margin-bottom: 0px;
+  background: #A4CE4E;
+  height: 55px;
+}
+
+.ui-tabs .ui-tabs-nav img,
+.react-tabs .react-tabs__tab-list img
+{
+  width: 20px;
+  height: auto;
+  padding-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor,
+
+.react-tabs .react-tabs__tab-list li.react-tabs__tab--selected .react-tabs__anchor,
+.react-tabs .react-tabs__tab-list li.ui-state-disabled .ui-tabs-anchor,
+.react-tabs .react-tabs__tab-list li.ui-tabs-loading .ui-tabs-anchor {
+  line-height: 45px;
+  cursor: text;
+  font-weight: bold;
+  color: #333333;
+  text-decoration: underline;
+}
+
+.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor,
+.react-tabs__collapsible .react-tabs__tab-list li.react-tabs__tab--selected .react-tabs__anchor {
+  cursor: pointer;
+  margin-top: -10px;
+}
+
+.ui-tabs .ui-tabs-panel,
+.react-tabs .react-tabs__tab-panel.react-tabs__tab-panel--selected
+ {
+  display: block;
+  border-width: 0;
+  border-top: #A4CE4E 10px solid;
+  &.with-padding {
+    padding: 1em 1.4em;
+  }
+  background: none;
+}
+
+/*======= Tab dots ========*/
+
+.ml-tab-dots {
+  -moz-border-radius: 50%;
+  /* Firefox */
+  -webkit-border-radius: 50%;
+  /* Safari & Chrome */
+  -khtml-border-radius: 50%;
+  /* Linux browsers */
+  border-radius: 50%;
+  /* CSS3 compatible browsers */
+  width: 10px;
+  height: 10px;
+  background: #999999;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0px 10px 15px 0px;
+}
+
+.ml-tab-dots-active {
+  width: 13px;
+  height: 13px;
+  background: #A4CE4E;
+}
+
+
+// START used for Panels with footers
+.ui-tabs,
+.react-tabs {
+  .panel-wrapper {
+    display: 'block';
+    .panel-body {
+      margin: auto;
+      padding: 20px;
+      width: 100%;
+      background: white;
+    }
+
+    .foot-note {
+      margin: auto;
+      padding: 20px;
+      width: 100%;
+      background: none; 
+    }
+  }
+}
+// END used for Panels with footers
+/* ===================================================================== */

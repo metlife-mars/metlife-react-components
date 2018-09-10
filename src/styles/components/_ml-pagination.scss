@@ -1,0 +1,112 @@
+//========================================
+// Pagination
+//========================================
+
+.pagination-container {
+  // text-align: center;
+  margin-bottom: 20px;
+
+  .text {
+    font-size: 13px;
+    display: inline-block;
+    font-weight: $bold;
+    left: 0;
+    padding-left: 15px;
+    padding-right: 30px;
+  }
+
+  .btn-group {
+    display: inline-block;
+    right: 0;
+    position: absolute;
+  }
+
+  @media (max-width: 800px) {
+    .text {
+      position: inherit;
+    }
+    .btn-group {
+      position: inherit;
+    }
+  }
+
+  .bubble-container {
+    text-align: center;
+    display: inline-block;
+  }
+
+  .ml-pagination-numbers {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 10px;
+    background: $metlife_gray;
+    font-size: 15px;
+    color: $very_dark_gray;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 2px;
+    margin-right: 2px;
+    &:hover {
+      background: $metlife_dark_blue;
+      color: $white;
+    }
+  }
+
+  .ml-current-page {
+    background: $metlife_dark_blue;
+    color: $white;
+  }
+
+  .pg-next {
+    background: $white url(/images/patterns/img/pagination/chevron-next.png) no-repeat 15px;
+    background-size: 20px 30px;
+    border: 1px solid $metlife_dark_blue;
+    text-align: left;
+    padding-left: 5px;
+    color: $metlife_dark_blue;
+    font-weight: $bold;
+    &:hover {
+      background: $metlife_dark_blue url(/images/patterns/img/pagination/chevron-next-hover.png) no-repeat 15px;
+      background-size: 20px 30px;
+    }
+  }
+
+  .pg-back {
+    background: $white url(/images/patterns/img/pagination/chevron-back.png) no-repeat 0;
+    background-size: 20px 30px;
+    border: 1px solid $metlife_dark_blue;
+    text-align: right;
+    padding-right: 5px;
+    color: $metlife_dark_blue;
+    font-weight: $bold;
+    &:hover {
+      background: $metlife_dark_blue url(/images/patterns/img/pagination/chevron-back-hover.png) no-repeat 0;
+      background-size: 20px 30px;
+    }
+  }
+
+  .option {
+    min-width: 198px;
+  }
+
+  .claimstatus-select {
+    min-width: 200px;
+  }
+
+  .dropdown {
+    float: right;
+    display: -webkit-box;
+  }
+
+  .pagination-dropdown-container {
+    display: inline-block;
+    padding-left: 30px;
+    min-width: 250px
+  }
+
+  .left-text {
+    text-align: left;
+  }
+}

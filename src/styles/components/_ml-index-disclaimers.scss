@@ -1,0 +1,20 @@
+//========================================
+// Index Disclaimers
+//========================================
+
+.inner-footer {
+  padding: 20px;
+  width: 100%;
+  font-style: italic;
+  font-size: 12px;
+  color: #333333;
+  text-align: left;
+  ul {
+    list-style-type: none;
+    li {
+      span:first-child {
+        margin-right: 5px;
+      }
+    }
+  }
+}

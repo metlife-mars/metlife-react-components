@@ -1,0 +1,175 @@
+//========================================
+// Table styles
+//========================================
+
+.ml-table {
+
+  .rt-table a:link,
+  table a:link {
+    color: #0061A0;
+    text-decoration: underline;
+  }
+  .rt-table a:visited,
+  table a:visited {
+    color: #0061A0;
+  }
+  .rt-table a:active, .rt-table a:hover,
+    table a:active, table a:hover {
+    text-decoration: none;
+  }
+  
+  .ml-table-title {
+    height: 37px;
+    line-height: 37px;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #007ABC;
+    text-align: center;
+  }
+  
+  /* =============== Table alternate Rows ================= */
+  .ReactTable {
+    border: none;
+  
+    .rt-table,
+    table {
+      .rt-thead {
+        &.-header {
+          box-shadow: none;
+        }
+        .rt-th {
+          font-weight: bold;
+          border: none;
+        }
+      }
+      
+      .rt-tbody {
+        .rt-tr-group {
+          border: none;
+          .rt-td, td {
+            border: none;
+            &.hidden {
+              padding-left: 0;
+              padding-right: 0;
+              min-width: 0;
+              width: 0;
+              max-width: 0;
+              background: #fff;
+            }
+          }
+
+          .rt-tr-group {
+            &:nth-child(even) {
+              .rt-tr {
+                background: #E5F4FB;
+              }
+            }
+            &:nth-child(odd) {
+              .rt-tr {
+                background: #FFFFFF;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  &.ml-table-alt-rows {
+    width: 100%;
+    color: #333333;
+    font-size: 13px;
+    background: #ffffff;
+    margin: 0px;
+    border-collapse: collapse;
+
+    .rt-table, table {
+
+      .rt-tr, tr {
+        text-align: center;
+        min-height: 37px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        
+        &.even, &.-even {
+          background-color: #FFFFFF;
+        }
+        &.odd, &.-odd {
+          background-color: #E5F4FB;
+        }
+
+        .rt-th, th {
+          padding: 10px 20px;
+          white-space: pre-line;
+        }
+
+        .rt-td, td {
+          padding: 10px 20px;
+          white-space: pre-line;
+        }
+      }
+    }
+  }
+
+  &.grouping {
+
+    width: 100%;
+    color: #333333;
+    font-size: 13px;
+    background: #ffffff;
+    margin: 0px;
+    border-collapse: collapse;
+
+    .rt-table, table {
+
+      .rt-thead {
+        &.-header {
+          border-bottom: 1px solid gray;
+        }
+      }
+      .rt-tbody {
+
+        .rt-tr, tr {
+          text-align: center;
+          min-height: 37px;
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          
+          &.even, &.-even,
+          &.odd, &.-odd {
+            background-color: #FFFFFF;
+          }
+          .rt-th, th {
+            padding: 10px 20px;
+            white-space: pre-line;
+          }
+
+          .rt-td, td {
+            padding: 10px 20px;
+            white-space: pre-line;
+          }
+        }
+      }
+    }
+  }
+
+  &.left-position {
+    .rt-table, table {
+      .rt-tr, tr {
+        .rt-th, th, .rt-td, td {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+
+  /* =============== Table header Rows ================= */
+  // .ReactTable > .rt-table > .rt-tbody > .rt-tr-group > .rt-tr {
+  //   background: #fff;
+  // }
+}

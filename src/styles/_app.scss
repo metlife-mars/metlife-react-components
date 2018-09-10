@@ -1,0 +1,64 @@
+.app {
+  text-align: center;
+}
+
+.app-logo {
+  height: 80px;
+}
+
+.app-header {
+  position: relative;
+  background-color: #007abc;
+  height: 150px;
+  padding: 20px;
+  color: white;
+  text-align: left;
+  padding-left: 60px;
+}
+
+.metlife-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  border-right: 145px solid #a4ce4e;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #0061a0;
+    z-index: 0;
+  }
+}
+
+.app-title {
+  font-size: 1.5em;
+}
+
+.app-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+// show users that they can click on the checkbox label
+label {
+  input[type=checkbox] {
+
+    &,
+    & + span {
+      cursor: pointer;
+    }
+
+  }
+}

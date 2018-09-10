@@ -1,0 +1,10 @@
+//========================================
+// Put mixins here
+//========================================
+
+@mixin metlife-font($size, $weight: $normal, $line_height: normal, $family: $noto_sans) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line_height;
+  font-family: $family;
+}

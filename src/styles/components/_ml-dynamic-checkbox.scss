@@ -1,0 +1,203 @@
+//========================================
+// Dynamic Checkbox
+//========================================
+
+.ml-dynamic-checkbox {
+  .bob-ic-ml-form-field-checkboxes-group-sub-set {
+    width: auto;
+    height: 18px;
+    position: relative;
+    margin: 0 auto 10px auto;
+    border-radius: 2px;
+    margin-left: 24px;
+    color: #151515;
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-set input {
+    position: absolute;
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-set label {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+    height: 16px;
+    cursor: pointer;
+    position: absolute;
+    padding: 0px 0 0 25px;
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-set label:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 0px;
+    left: 2px;
+    border: solid 1px #BBBBBB;
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-set label:after {
+    content: '';
+    width: 9px;
+    height: 4px;
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    border-left: 2px solid #007abc;
+    border-bottom: 2px solid #007abc;
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-set input[type=checkbox] {
+    opacity: 0;
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-set input[type=checkbox]:checked+label:after {
+    opacity: 1;
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-set input[type=checkbox]:focus+label:before,
+  .bob-ic-ml-form-field-checkboxes-group input[type=checkbox]:checked+label:before {
+    border-color: #007abc;
+    border-width: 2px;
+  }
+  .bob-ic-ml-form-field-checkboxes-group {
+    width: auto;
+    height: 18px;
+    position: relative;
+    margin: 0 auto 10px auto;
+    border-radius: 2px;
+    font-weight: bold;
+    &.is-child {
+      font-weight: normal;
+    }
+  }
+  .bob-ic-ml-form-field-checkboxes-group input {
+    position: absolute;
+  }
+  .bob-ic-ml-form-field-checkboxes-group label {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 90%;
+    height: 16px;
+    cursor: pointer;
+    position: absolute;
+    padding: 0px 0 0px 25px;
+  }
+  .bob-ic-ml-form-field-checkboxes-group label:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 0px;
+    left: 2px;
+    border: solid 1px #BBBBBB;
+  }
+  .bob-ic-ml-form-field-checkboxes-group label:after {
+    content: '';
+    width: 9px;
+    height: 4px;
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    border-left: 2px solid #007abc;
+    border-bottom: 2px solid #007abc;
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .bob-ic-ml-form-field-checkboxes-group input[type=checkbox] {
+    opacity: 0;
+  }
+  .bob-ic-ml-form-field-checkboxes-group input[type=checkbox]:checked+label:after {
+    opacity: 1;
+  }
+  .bob-ic-ml-form-field-checkboxes-group input[type=checkbox]:focus+label:before,
+  .bob-ic-ml-form-field-checkboxes-group input[type=checkbox]:checked+label:before {
+    border-color: #007abc;
+    border-width: 2px;
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-sub-set {
+    width: auto;
+    height: 18px;
+    position: relative;
+    margin: 0 auto 10px auto;
+    border-radius: 2px;
+    margin-left: 48px;
+    color: #151515;
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-sub-sub-set {
+    width: auto;
+    height: 18px;
+    position: relative;
+    margin: 0 auto 10px auto;
+    border-radius: 2px;
+    margin-left: 72px;
+    color: #151515;
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-sub-sub-sub-set {
+    width: auto;
+    height: 18px;
+    position: relative;
+    margin: 0 auto 10px auto;
+    border-radius: 2px;
+    margin-left: 96px;
+    color: #151515;
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-sub-set input {
+    position: absolute;
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-sub-set label {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 90%;
+    height: 16px;
+    cursor: pointer;
+    position: absolute;
+    padding: 0px 0 0 25px;
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-sub-set label:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 0px;
+    left: 2px;
+    border: solid 1px #BBBBBB;
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-sub-set label:after {
+    content: '';
+    width: 9px;
+    height: 4px;
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    border-left: 2px solid #007abc;
+    border-bottom: 2px solid #007abc;
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-sub-set input[type=checkbox] {
+    opacity: 0;
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-sub-set input[type=checkbox]:checked+label:after {
+    opacity: 1;
+  }
+  .bob-ic-ml-form-field-checkboxes-group-sub-sub-set input[type=checkbox]:focus+label:before,
+  .bob-ic-ml-form-field-checkboxes-group input[type=checkbox]:checked+label:before {
+    border-color: #007abc;
+    border-width: 2px;
+  }
+  .bob-checked-box label:before {
+    border-color: #007abc;
+  }
+  input[type=checkbox]:checked + label:before {
+    border-width: 2px;
+  }
+}

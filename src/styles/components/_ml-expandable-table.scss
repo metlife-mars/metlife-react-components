@@ -1,0 +1,301 @@
+//========================================
+// Expandable Table
+//========================================
+
+// START TABLE reset
+th {
+  text-align: left;
+}
+// END TABLE reset
+
+.table-heading {
+  @include metlife-font(14px, $bold, $line_height: 19px);
+  text-decoration: underline;
+}
+
+/*generic-table: agents-assign, VUL fund selection*/
+.generic-table {
+  table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    th {
+      @include metlife-font(13px, $bold, $line_height: 17px);
+      text-align: left;
+      border-top: 1px solid $metlife_btn_link_blue;
+      border-bottom: 1px solid $metlife_btn_link_blue;
+      padding: 15px 20px;
+      &.select-header {
+        padding-left: 0;
+        width: 80px;
+        border: 0;
+        text-decoration: underline;
+        color: $metlife_btn_link_blue;
+        cursor: pointer;
+        &:hover {
+          color: $metlife_dark_blue;
+        }
+      }
+      &.active {
+        background-color: $table_sortable_gray;
+      }
+      .sort {
+        position: relative;
+        display: inline;
+        margin-left: 5px;
+        .caret-up {
+          position: absolute;
+          top: 5px;
+          left: 0;
+          border-bottom: 4px solid $metlife_lighter_gray;
+          border-left: 4px solid $transparent;
+          border-right: 4px solid $transparent;
+          &.active {
+            border-bottom-color: $very_dark_gray;
+          }
+        }
+        .caret-down {
+          position: absolute;
+          top: 10px;
+          left: 0;
+          border-top: 4px solid $metlife_lighter_gray;
+          border-left: 4px solid $transparent;
+          border-right: 4px solid $transparent;
+          &.active {
+            border-top-color: $very_dark_gray;
+          }
+        }
+      }
+    }
+    td {
+      @include metlife-font(13px, $line_height: 17px);
+      border-bottom: 1px solid $metlife_btn_link_blue;
+      padding: 15px 20px;
+      &.select-box {
+        text-align: center;
+        border: 0;
+      }
+    }
+  }
+  &.first-cell-no-padding {
+    th,
+    td {
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  } //ex: VUL fund selection table
+}
+/*summary-table (table-no-caption, table-w-caption): illustration quote summary, etc*/
+.table-no-caption {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    th {
+      @include metlife-font(14px, $bold, $family: $geo);
+      color: $white;
+      background-color: $metlife_btn_link_blue;
+      padding: 10px 20px;
+    }
+    td {
+      @include metlife-font(13px, $line_height: 17px);
+      padding: 10px 20px;
+      border: 1px solid $soft_gray;
+      text-align: center;
+    }
+    // tbody {
+    //   tr {
+    //     &:nth-child(2n + 0) {
+    //       td {
+    //         background-color: $table_light_blue;
+    //       }
+    //     }
+    //   }
+    // }//verify
+  }
+
+}
+.table-w-caption {
+  .ml-table-title {
+    @include metlife-font(14px, $bold, $family: $geo);
+    color: $white;
+    background-color: $metlife_btn_link_blue;
+    padding: 10px 20px;
+    // width: 100%;
+    width: auto;
+    text-align: center;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    th {
+      @include metlife-font(13px, $bold, $line_height: 17px);
+      color: $very_dark_gray;
+      background-color: $white;
+      padding: 10px 20px;
+    }
+    td {
+      @include metlife-font(13px, $line_height: 17px);
+      padding: 10px 20px;
+      span {
+        display: inline-block;
+      }
+    }
+    tbody {
+      .odd {
+        td {
+          background-color: $table_light_blue;
+        }
+      }
+    }
+    .cell-bold {
+      font-weight: $bold;
+    }
+    .cell-left {
+      text-align: left;
+    }
+    .cell-right {
+      text-align: right;
+    }
+    .chevron {
+      margin-left: 10px;
+      cursor: pointer;
+      &::after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid $very_dark_gray;
+        border-bottom: 2px solid $very_dark_gray;
+        transform: rotate(45deg);
+        transition: transform 0.4s;
+        -webkit-transition: transform 0.4s;
+      }
+      &:hover {
+        &::after {
+          border-right-color: $metlife_dark_blue;
+          border-bottom-color: $metlife_dark_blue;
+        }
+      }
+    }
+    .open {
+      .chevron {
+        &::after {
+          transform: rotate(-135deg);
+          transition: transform 0.4s;
+          -webkit-transition: transform 0.4s;
+        }
+      }
+    }
+    .row-content {
+      display: table-row;
+      > div {
+        display: table-cell;
+        padding-left: 20px;
+      }
+      .supplementary-benefit-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .row-content-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 0;
+          &.summary {
+            border-bottom: 1px solid $metlife_light_blue;
+          }
+          .list-option {
+            display: block;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+/* ex: illustration quote summary table with expand row */
+.with-expand-row {
+  .cell-right {
+    white-space: nowrap;
+    width: 1px;
+    padding-left: 0;
+  } //make right th, td have a width dynamic to content width
+}
+
+
+
+.pagination-container {
+  margin-top: 20px;
+  // padding-left: 80px;
+  padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .text {
+    @include metlife-font(13px, $bold, $line_height: 17px);
+    padding-left: 0;
+    span {
+      font-weight: $normal;
+    }
+  }
+  .pagination-dropdown-container {
+    padding-left: 0;
+  }
+  .ml-form {
+    padding-right: 0;
+  }
+}
+
+// @source: http://ux.metlife.com/assets/patterns/html/tables/tables-2.html
+.ml-table-expcol {
+  tr {
+    border-bottom: 1px solid #0090DA;
+    text-align: left;
+    height: 57px;
+
+    th {
+      border-top: 1px solid #0090DA;
+      border-bottom: 1px solid #0090DA;
+    }
+
+    td:last-child {
+      background: url(/images/patterns/img/tables/expand.svg) no-repeat center;
+      background-size: 28px;
+      width: 50px;
+      padding-right: 20px;
+      cursor: pointer;
+    }
+  
+    &.expanded {
+      border-bottom: 2px solid #0090DA;
+      border-top: 2px solid #0090DA;
+      background: #f2f2f2;
+
+      td:first-child {
+        background: url(/images/patterns/img/tables/border_BG.png) repeat-y left;
+      }
+
+      td:last-child {
+        background: url(/images/patterns/img/tables/collapse.svg) no-repeat center;
+        background-size: 28px;
+        border-right: 2px solid #0090DA;
+      }
+    }
+
+    &.expendable {
+      height: 200px;
+      border-bottom: 2px solid #0090DA;
+      background: url(/images/patterns/img/tables/down-arrow.png) no-repeat top center;
+      background-size: 14px;
+
+      td {
+        background: url(/images/patterns/img/tables/border_BG.png) repeat-y left;
+        border-right: 2px solid #0090DA;
+        min-height: 250px;
+      }
+    }
+  }
+
+
+}

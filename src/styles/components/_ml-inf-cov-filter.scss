@@ -1,0 +1,236 @@
+//========================================
+// Inforce Coverage Filter
+//========================================
+
+.ml-inf-cov-filter {
+  // @import './MLInfCovFilterDatePicker/styles';
+  // $NotoSans: $noto_sans;
+
+  & {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  &.right-position {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .dropdown-container {
+    & {
+      position: relative;
+      width: 250px;
+      bottom: 1px;
+    }
+    .dropdown-button {
+      outline: none;
+      cursor: pointer;
+      display: inline-block;
+      width: 250px;
+      height: 40px;
+      background: #FFFFFF;
+      border: 1px solid #AAA9AA;
+      border-radius: 2px;
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 13px;
+      line-height: 17px;
+      color: #333333;
+      text-align: left;
+      padding: 10px 0 10px 10px;
+      position: relative;
+      top: 1px;
+      /* Dropdown box downwards arrow style */
+      &:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border: 7px solid transparent;
+        border-color: #AAA9AA transparent transparent transparent;
+        position: absolute;
+        top: 16px;
+        right: 10px;
+      }
+      &.open {
+        position: relative;
+        font-weight: bold;
+        border: solid 1px #007abc;
+        outline: 0;
+      }
+      &.open:after {
+        border-color: #007abc transparent transparent transparent;
+      }
+    }
+    .dropdown-main {
+      position: absolute;
+      right: 0;
+      /* must be changed in use */
+      height: 379px;
+      width: 677px;
+      background: #FFFFFF;
+      border: 1px solid #007ABC;
+      border-radius: 2px;
+      display: none;
+      grid-template-columns: 30% 30% 40%;
+      padding-top: 20px;
+      z-index: 1000;
+      &.open {
+        display: grid;
+      }
+    }
+  } // @TODO date-picker related style should NOT be here
+  .bob-renewal-date-picker {
+    height: 170px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 2px 0;
+  }
+  .bob-ic-datepicker>.react-datepicker__input-container>img {
+    margin-left: 12px;
+    margin-right: 2px;
+  }
+  .bob-ic-datepicker>div>div>div>div>div .react-datepicker__triangle {
+    left: 44px;
+  }
+  .bob-ic-datepicker>div {
+    margin: 2px 0 0 0px;
+  }
+  .bob-ic-datepicker>div>p {
+    margin: 0 0 21px 0;
+    padding-top: 2px;
+  }
+  .bob-ic-datepicker>div>.ml-datepicker-input-container {
+    margin: 0 0 0 0;
+  }
+  .bob-ic-datepicker>div>div>div>div>div>img {
+    margin-right: 6px;
+    margin-left: 10px;
+  }
+  .bob-ic-date-picker {
+    width: 220px;
+    height: 120px;
+    text-align: left;
+  }
+  .bob-ic-date-wrapper {
+    margin: 0 10px 0 2px;
+  }
+  .bob-ic-form-date {
+    border: 1px solid #AAA9AA;
+    border-radius: 3px;
+    width: 176px;
+    height: 40px;
+  }
+  .bob-ic-date-text {
+    margin: 0;
+    font-size: 12px;
+    color: #333333;
+    margin-left: 10px;
+    position: relative;
+    top: 6px;
+    background-color: white;
+    display: inline-block;
+  }
+  .bob-ic-date-div {
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 10px 0;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    background-color: #EEEEEE;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    width: 9px;
+    background-color: #EEEEEE;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #979797;
+    border-radius: 10px;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: grey;
+  }
+  .bob-ic-all-products {
+    background-color: white;
+    font-family: $NotoSans;
+    font-size: 13px;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 16px;
+    padding: 4px 0 0 15px;
+    overflow-x: hidden;
+    font-family: 'Noto Sans', sans-serif;
+    margin-bottom: 75px;
+  }
+  .bob-ic-all-clients {
+    background-color: white;
+    font-family: $NotoSans;
+    font-size: 13px;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 16px;
+    padding: 4px 0 0 15px;
+    overflow-x: hidden;
+    font-family: 'Noto Sans', sans-serif;
+    margin-bottom: 75px;
+  }
+  .bob-ic-renewal-date {
+    height: 336px;
+    font-family: $NotoSans;
+    font-size: 13px;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 16px;
+    margin-left: 18px;
+    padding: 0 14px;
+    border-left: 1px solid #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Sans', sans-serif;
+  }
+  .bob-ic-cal-icon {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    margin-top: 26px;
+    margin-left: -10px;
+  }
+  .bob-ic-apply-button {
+    margin-top: 25px;
+    text-align: right;
+    padding-right: 4px;
+  }
+  .bob-ic-ml-button-primary {
+    box-sizing: content-box;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color: transparent;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 2px;
+    padding: 12px 24px;
+    border: 0;
+    display: inline-block;
+  }
+  .bob-ic-ml-button-primary:hover,
+  .bob-ic-ml-button-primary:focus,
+  .hover.bob-ic-ml-button-primary {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .bob-ic-ml-button-primary:focus,
+  .bob-ic-ml-button-primary {
+    outline-color: #333;
+    text-decoration: underline;
+  }
+  .focus.bob-ic-ml-button-primary {
+    box-shadow: 0 0 3px #333, 0 0 7px #333;
+  }
+  .bob-ic-ml-button-primary {
+    background-color: #007abc;
+    color: #fff;
+  }
+}
