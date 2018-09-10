@@ -166,7 +166,7 @@ export const brokerRows = [{
  * ```
  */
 export default (storiesOf, module, ContainerDecorator) => {
-    storiesOf('MetLife Components - Table', module)
+    storiesOf('Data Table', module)
         .addDecorator(ContainerDecorator)
         .addWithInfo('with title, columns, and rows', `
 ## Documentation

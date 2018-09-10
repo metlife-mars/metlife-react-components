@@ -12,7 +12,7 @@ export function createDomReference(e) {
  * Storybook for MLTabs
  */
 export default (storiesOf, module, ContainerDecorator) => {
-    storiesOf('MetLife Components - Button', module)
+    storiesOf('Button', module)
         .addDecorator(ContainerDecorator)
         .addWithInfo('with onClick prop', () => <MLButton value="Click" onClick={action('MLButton clicked')} />)    
         .addWithInfo('with getRef prop', withNotes('Useful for accessibility focused apps')(() => <MLButton value="Click" getRef={createDomReference} />))   

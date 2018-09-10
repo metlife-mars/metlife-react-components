@@ -446,7 +446,7 @@ video {
   left: 0;
   background-color: transparent;
   height: 100%;
-  width: 100%;
+  width: calc(100% - 145px);
   border-right: 145px solid #a4ce4e; }
   .metlife-background::after {
     content: '';
