@@ -1,1 +1,1 @@
-npx replace-in-file '<title>Storybook</title>' '<title>MetLife - React Components</title><base href = "https://metlife-mars.github.io/metlife-react-components/" />'  storybook-static/*.html
+npx replace-in-file '<title>Storybook</title>' '<title>MetLife - React Components</title><base href="https://metlife-mars.github.io/metlife-react-components/" />'  storybook-static/*.html
