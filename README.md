@@ -10,17 +10,44 @@ Each component will be tested and documented using the storybook development env
 
 Each completed component should be listed below with a link to its storybook documentation.
 
+# Running Locally
+
+* Clone repo `https://github.com/metlife-mars/metlife-react-components.git`
+```sh
+git clone <repo>
+```
+
+* Install dependencies
+```sh
+npm i
+```
+
+* Start storybook server
+```sh
+npm run storybook
+```
+
 # React Components
 
 ## Form Elements
 
 ### Button
-* [x] Works [Storybook]()
+* [x] Works [Storybook](https://metlife-mars.github.io/metlife-react-components/?selectedKind=Button)
+* [ ] Linted
+* [ ] Unit Tested
+
+### Checkbox
+* [x] Works [Storybook](https://metlife-mars.github.io/metlife-react-components/?selectedKind=Checkbox)
+* [ ] Linted
+* [ ] Unit Tested
+
+### Radio Group
+* [x] Works [Storybook](https://metlife-mars.github.io/metlife-react-components/?selectedKind=Radio%20Group)
 * [ ] Linted
 * [ ] Unit Tested
 
 ### Select
-* [x] Works [Storybook]()
+* [x] Works [Storybook](https://metlife-mars.github.io/metlife-react-components/?selectedKind=Select)
 * [ ] Linted
 * [ ] Unit Tested
 
@@ -37,7 +64,7 @@ Each completed component should be listed below with a link to its storybook doc
 ## Tables
 
 ### DataTable
-* [ ] Works
+* [x] Works [Storybook](https://metlife-mars.github.io/metlife-react-components/?selectedKind=Data%20Table)
 * [ ] Linted
 * [ ] Unit Tested
 

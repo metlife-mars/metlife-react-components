@@ -7,6 +7,11 @@ import '../styles/main.css';
 import App from '../App';
 import {
     MLButtonStory,
+    MLCheckbox,
+    MLCheckboxStory,
+    MLRadioButtonStory,
+    MLRadioGroupStory,
+    MLSelectStory,
     MLTableStory,
 } from '../components';
 
@@ -38,10 +43,17 @@ class ContainerDecoratorComponent extends Component {
         const { children } = this.props;
         return (
             <div style={styles}>
-                <label htmlFor="container-decorator-cb"> 
+            <MLCheckbox
+                onChange={this.toggleShowWrapper}
+                name="Show Wrapper"
+                checked={showWrapper}
+            />
+            <br />
+            <br />
+                {/* <label htmlFor="container-decorator-cb"> 
                     <input type="checkbox" checked={showWrapper} onChange={this.toggleShowWrapper} id="container-decorator-cb" style={{ marginBottom: 15 }}/>
                     <span>Show Wrapper</span>
-                </label>
+                </label> */}
                 <div style={{...wrapperStyles, borderWidth: showWrapper ? 1 : 0 }}>
                     {children}
                 </div>
@@ -55,9 +67,20 @@ const ContainerDecorator = storyFn => (
     </ContainerDecoratorComponent>
 );
 
+const ContainerDecoratorWithDesc = description => storyFn => (
+    <div style={styles}>
+        <p style={{ marginBottom: 10 }}>{description}</p>
+        {storyFn()}
+    </div>
+);
+
 storiesOf('Welcome', module)
     .add('to MetLife', () => <App />);
 
 MLButtonStory(storiesOf, module, ContainerDecorator);
+MLCheckboxStory(storiesOf, module, ContainerDecoratorWithDesc);
+MLRadioButtonStory(storiesOf, module, ContainerDecoratorWithDesc);
+MLRadioGroupStory(storiesOf, module, ContainerDecorator);
+MLSelectStory(storiesOf, module, ContainerDecorator);
 MLTableStory(storiesOf, module, ContainerDecorator);
 

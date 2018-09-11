@@ -1,0 +1,30 @@
+//========================================
+// RadioGroup styles
+//========================================
+
+.ml-radio-group {
+    border: none;
+    background-color: #fff;
+    font-family: "Noto Sans";
+    max-width: 290px;
+
+    &.horizontal {
+        max-width: 100%;
+    }
+
+    legend {
+        width: auto;
+        position: relative;
+        margin: 20px; // margin: 20px auto;
+        margin-left: 0; // margin: 20px auto;
+        transition: all 250ms;
+        font-weight: bold;
+        float: left;
+        clear: both;
+
+        &.horizontal {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
