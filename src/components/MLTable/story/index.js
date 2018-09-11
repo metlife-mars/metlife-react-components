@@ -190,8 +190,8 @@ export default (storiesOf, module, ContainerDecorator) => {
         () => (
             <MLTable
                 groupBy="coverage"
-                icons={{ 'Supplemental Life/AD&D': '/assets/patterns/img/tables/grouping/i_accident.png', 'Basic Life': '/assets/patterns/img/tables/grouping/i_life.png' }}
-                defaultIcon="/assets/patterns/img/tables/grouping/i_life.png"
+                icons={{ 'Supplemental Life/AD&D': 'assets/patterns/img/tables/grouping/i_accident.png', 'Basic Life': 'assets/patterns/img/tables/grouping/i_life.png' }}
+                defaultIcon="assets/patterns/img/tables/grouping/i_life.png"
                 title="Life"
                 columns={brokerColumns}
                 rows={brokerRows}

@@ -25,7 +25,7 @@
     "build-storybook": "npm-run-all build-css build-storybook-react",
     "build-css": "node-sass-chokidar src/styles/main.scss -o src/styles",
     "watch-css": "node-sass-chokidar src/styles/main.scss -o src/styles --include-path ./src --include-path ./node_modules --watch --recursive",
-    "predeploy": "npm run build && sh post-storybook-build.sh",
+    "predeploy": "sh deploy/pre-storybook-build.sh && npm run build-storybook && sh deploy/post-storybook-build.sh",
     "deploy": "gh-pages -d storybook-static"
   },
   "devDependencies": {
