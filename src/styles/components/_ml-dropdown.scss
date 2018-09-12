@@ -1,0 +1,89 @@
+//========================================
+// Dropdown styles
+//========================================
+.ml-dropdown {  
+    & {
+      position: relative;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    &.right-position {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .dropdown-container {
+      & {
+        position: relative;
+        width: 250px;
+        bottom: 1px;
+      }
+      .dropdown-button {
+        outline: none;
+        cursor: pointer;
+        display: inline-block;
+        width: 250px;
+        height: 40px;
+        background: #FFFFFF;
+        border: 1px solid #AAA9AA;
+        border-radius: 2px;
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 13px;
+        line-height: 17px;
+        color: #333333;
+        text-align: left;
+        padding: 10px 0 10px 10px;
+        position: relative;
+        top: 1px;
+        /* Dropdown box downwards arrow style */
+        &:after {
+          content: "";
+          width: 0;
+          height: 0;
+          border: 7px solid transparent;
+          border-color: #AAA9AA transparent transparent transparent;
+          position: absolute;
+          top: 16px;
+          right: 10px;
+        }
+        &.open {
+          position: relative;
+          font-weight: bold;
+          border: solid 1px #007abc;
+          outline: 0;
+        }
+        &.open:after {
+          border-color: #007abc transparent transparent transparent;
+        }
+      }
+
+      .dropdown-body {
+        position: absolute;
+        right: 0;
+        width: 100%;
+        background: #FFFFFF;
+        border: 1px solid #007ABC;
+        border-radius: 2px;
+        z-index: 1000;
+      }
+
+      .dropdown-main {
+        position: absolute;
+        right: 0;
+        /* must be changed in use */
+        height: 379px;
+        width: 677px;
+        background: #FFFFFF;
+        border: 1px solid #007ABC;
+        border-radius: 2px;
+        display: none;
+        grid-template-columns: 30% 30% 40%;
+        padding-top: 20px;
+        z-index: 1000;
+        &.open {
+          display: grid;
+        }
+      }
+    }
+
+  }
+  

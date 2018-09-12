@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i");
+.ml-datepicker-component {
+  /** BUTTON **/
+  /** DATE PICKER TRIANGLE **/
+  /** CALENDAR STYLE **/ }
+  .ml-datepicker-component .ml-datepicker-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 2px;
+    box-sizing: border-box;
+    justify-content: space-between; }
+    .ml-datepicker-component .ml-datepicker-container p {
+      font-family: 'Noto Sans';
+      font-size: 13px;
+      font-weight: 700;
+      color: #333333;
+      margin: 0 0 21px 21px; }
+  .ml-datepicker-component .ml-datepicker-input-container {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 22px;
+    font-family: 'Noto Sans';
+    font-size: 13px; }
+    .ml-datepicker-component .ml-datepicker-input-container .ml-datepicker-input-span {
+      position: absolute;
+      font-size: 12px;
+      color: #333;
+      background: #fff;
+      margin-left: 10px;
+      padding: 0 2px;
+      margin-top: -20px; }
+    .ml-datepicker-component .ml-datepicker-input-container img {
+      height: 20px;
+      width: 20px;
+      margin-left: 16px; }
+      .ml-datepicker-component .ml-datepicker-input-container img:hover {
+        cursor: pointer; }
+    .ml-datepicker-component .ml-datepicker-input-container .ml-datepicker-input {
+      font: inherit;
+      height: 40px;
+      width: 200px;
+      padding-left: 10px;
+      border: 1px solid #AAA9AA;
+      border-radius: 3px;
+      box-sizing: border-box;
+      color: #333333;
+      letter-spacing: 0;
+      outline: none; }
+      .ml-datepicker-component .ml-datepicker-input-container .ml-datepicker-input:focus {
+        border: solid 1px #007abc; }
+      .ml-datepicker-component .ml-datepicker-input-container .ml-datepicker-input:focus + span {
+        font-weight: bold; }
+    .ml-datepicker-component .ml-datepicker-input-container .ml-datepicker-input-error {
+      font: inherit;
+      height: 40px;
+      width: 200px;
+      padding-left: 10px;
+      border: solid 1px #DB1818;
+      border-radius: 3px;
+      box-sizing: border-box;
+      color: #333333;
+      letter-spacing: 0;
+      outline: none;
+      background-color: #FDE8E8; }
+      .ml-datepicker-component .ml-datepicker-input-container .ml-datepicker-input-error:focus {
+        background: #fff; }
+      .ml-datepicker-component .ml-datepicker-input-container .ml-datepicker-input-error:focus + span {
+        font-weight: bold; }
+  .ml-datepicker-component a img {
+    height: 5.8px;
+    width: 10.3px; }
+  .ml-datepicker-component a:link, .ml-datepicker-component a:visited {
+    text-decoration: none; }
+  .ml-datepicker-component .ml-datepicker-button-primary {
+    height: 41px;
+    width: 84px;
+    background: #007ABC;
+    border-radius: 2px;
+    outline: none;
+    margin: 0 0 30px 177px;
+    color: #ffffff;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 0; }
+  .ml-datepicker-component .ml-datepicker-button-primary:hover,
+  .ml-datepicker-component .ml-datepicker-button-primary:focus,
+  .ml-datepicker-component .hover.ml-datepicker-button-primary {
+    text-decoration: underline; }
+  .ml-datepicker-component .ml-datepicker-button-primary:focus,
+  .ml-datepicker-component .focus.ml-datepicker-button-primary {
+    outline-color: #333;
+    text-decoration: underline; }
+  .ml-datepicker-component .focus.ml-datepicker-button-primary {
+    box-shadow: 0 0 3px #333, 0 0 7px #333; }
+  .ml-datepicker-component .ml-datepicker-button-primary:hover,
+  .ml-datepicker-component .ml-datepicker-button-primary:focus,
+  .ml-datepicker-component .ml-datepicker-button-primary.hover,
+  .ml-datepicker-component .ml-datepicker-button-primary.focus {
+    background-color: #0061a0; }
+  .ml-datepicker-component .react-datepicker__triangle {
+    margin-left: 162px !important; }
+  .ml-datepicker-component .calendar-styling .react-datepicker__day--selected,
+  .ml-datepicker-component .calendar-styling .react-datepicker__day--in-selecting-range,
+  .ml-datepicker-component .calendar-styling .react-datepicker__day--in-range {
+    border-radius: 0;
+    background: #0061A0; }
+  .ml-datepicker-component .calendar-styling .react-datepicker__day,
+  .ml-datepicker-component .calendar-styling .react-datepicker__day--keyboard-selected,
+  .ml-datepicker-component .calendar-styling .react-datepicker__day:hover {
+    border-radius: 0; }
+  .ml-datepicker-component .ml-datepicker-error-message {
+    margin-bottom: 30px; }
+  .ml-datepicker-component .ml-datepicker-error-message-active {
+    color: #DB1818;
+    font-size: 11px;
+    margin: 0 0 15px 30px; }

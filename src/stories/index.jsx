@@ -12,6 +12,8 @@ import {
     MLRadioButtonStory,
     MLRadioGroupStory,
     MLSelectStory,
+    MLDropdownStory,
+    MLDatePickerStory,
     MLTableStory,
 } from '../components';
 
@@ -70,6 +72,8 @@ const ContainerDecorator = storyFn => (
 const ContainerDecoratorWithDesc = description => storyFn => (
     <div style={styles}>
         <p style={{ marginBottom: 10 }}>{description}</p>
+        <br />
+        <br />
         {storyFn()}
     </div>
 );
@@ -82,5 +86,7 @@ MLCheckboxStory(storiesOf, module, ContainerDecoratorWithDesc);
 MLRadioButtonStory(storiesOf, module, ContainerDecoratorWithDesc);
 MLRadioGroupStory(storiesOf, module, ContainerDecorator);
 MLSelectStory(storiesOf, module, ContainerDecorator);
+MLDropdownStory(storiesOf, module, ContainerDecorator);
+MLDatePickerStory(storiesOf, module, ContainerDecoratorWithDesc);
 MLTableStory(storiesOf, module, ContainerDecorator);
 
