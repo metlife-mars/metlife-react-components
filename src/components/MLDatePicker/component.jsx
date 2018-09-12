@@ -41,20 +41,6 @@ MLDatePicker.defaultProps = {
     toDate: null,
     minDate: null,
     maxDate: null,
-    formatValidators: {
-        from: function (date) {
-            if (moment(date, 'MM/DD/YYYY', true).isValid()) return true
-            return false
-        },
-        to: function (date) {
-            if (moment(date, 'MM/DD/YYYY', true).isValid()) return true
-            return false
-        },
-    },
-    errorObjects: {
-        from: { show: false, message: "From date is malformatted" },
-        to: { show: false, message: "To date is malformatted" },
-    },
     onApply: () => {},
     onChange: () => {},
 };
