@@ -1223,6 +1223,60 @@ label input[type=checkbox] + span {
       display: inline-block;
       vertical-align: middle; }
 
+.ml-text-input {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; }
+  .ml-text-input label {
+    position: relative;
+    display: flex;
+    flex: 1 0 100%; }
+    .ml-text-input label input[type=text] {
+      border: 1px solid #757575;
+      border-radius: 2px;
+      height: 40px;
+      line-height: 17px;
+      outline: none;
+      padding: 10px;
+      width: 230px; }
+      .ml-text-input label input[type=text]:focus {
+        border: solid 1px #007abc; }
+      .ml-text-input label input[type=text]:focus + span {
+        font-weight: bold; }
+      .ml-text-input label input[type=text]:focus + span,
+      .ml-text-input label input[type=text].has-value + span {
+        background-color: #fff;
+        font-size: 13px;
+        margin-top: 13px;
+        text-shadow: -4px 2px 0 0 #fff, 3px 0 1px 0 #fff, -2px 0 0 0 #fff, -3px 1px 2px 0 #fff, 6px 0 0 0 #fff, 4px 2px 0 0 #fff, 1px 1px 0 0 #fff;
+        top: -6.5px;
+        transform: translateY(-100%);
+        transition: .3s ease;
+        width: auto; }
+      .ml-text-input label input[type=text].error {
+        background-color: #fde8e8;
+        border: solid 1px #db1818; }
+        .ml-text-input label input[type=text].error:focus, .ml-text-input label input[type=text].error.has-value {
+          background-color: #fff; }
+    .ml-text-input label span {
+      color: #333;
+      cursor: text;
+      display: inline-flex;
+      font-size: 13px;
+      left: 10px;
+      padding: 0 1px;
+      position: absolute;
+      top: calc(50% - 6.5px);
+      transition: .3s ease; }
+  .ml-text-input .no-error {
+    display: none; }
+  .ml-text-input div.errortext {
+    color: #db1818;
+    display: flex;
+    flex: 1 0 100%;
+    font-size: 12px;
+    margin-top: 5px; }
+
 .ml-form {
   position: relative;
   padding-top: 20px;
@@ -1723,7 +1777,6 @@ label input[type=checkbox] + span {
     display: grid; }
 
 .ml-datepicker {
-  /** BUTTON **/
   /** DATE PICKER TRIANGLE **/
   /** CALENDAR STYLE **/ }
   .ml-datepicker .ml-datepicker-container {
@@ -1743,90 +1796,18 @@ label input[type=checkbox] + span {
       margin: 0 0 21px 21px; }
   .ml-datepicker .ml-datepicker-input-container {
     display: flex;
-    align-items: center;
-    margin: 0 0 0 22px;
-    font-family: 'Noto Sans';
-    font-size: 13px; }
-    .ml-datepicker .ml-datepicker-input-container .ml-datepicker-input-span {
-      position: absolute;
-      font-size: 12px;
-      color: #333;
-      background: #fff;
-      margin-left: 10px;
-      padding: 0 2px;
-      margin-top: -20px; }
+    align-items: center; }
     .ml-datepicker .ml-datepicker-input-container img {
       height: 20px;
       width: 20px;
       margin-left: 16px; }
       .ml-datepicker .ml-datepicker-input-container img:hover {
         cursor: pointer; }
-    .ml-datepicker .ml-datepicker-input-container .ml-datepicker-input {
-      font: inherit;
-      height: 40px;
-      width: 200px;
-      padding-left: 10px;
-      border: 1px solid #AAA9AA;
-      border-radius: 3px;
-      box-sizing: border-box;
-      color: #333333;
-      letter-spacing: 0;
-      outline: none; }
-      .ml-datepicker .ml-datepicker-input-container .ml-datepicker-input:focus {
-        border: solid 1px #007abc; }
-      .ml-datepicker .ml-datepicker-input-container .ml-datepicker-input:focus + span {
-        font-weight: bold; }
-    .ml-datepicker .ml-datepicker-input-container .ml-datepicker-input-error {
-      font: inherit;
-      height: 40px;
-      width: 200px;
-      padding-left: 10px;
-      border: solid 1px #DB1818;
-      border-radius: 3px;
-      box-sizing: border-box;
-      color: #333333;
-      letter-spacing: 0;
-      outline: none;
-      background-color: #FDE8E8; }
-      .ml-datepicker .ml-datepicker-input-container .ml-datepicker-input-error:focus {
-        background: #fff; }
-      .ml-datepicker .ml-datepicker-input-container .ml-datepicker-input-error:focus + span {
-        font-weight: bold; }
   .ml-datepicker a img {
     height: 5.8px;
     width: 10.3px; }
   .ml-datepicker a:link, .ml-datepicker a:visited {
     text-decoration: none; }
-  .ml-datepicker .ml-datepicker-button-primary {
-    height: 41px;
-    width: 84px;
-    background: #007ABC;
-    border-radius: 2px;
-    outline: none;
-    margin: 0 0 30px 177px;
-    color: #ffffff;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 14px;
-    text-align: center;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 0; }
-  .ml-datepicker .ml-datepicker-button-primary:hover,
-  .ml-datepicker .ml-datepicker-button-primary:focus,
-  .ml-datepicker .hover.ml-datepicker-button-primary {
-    text-decoration: underline; }
-  .ml-datepicker .ml-datepicker-button-primary:focus,
-  .ml-datepicker .focus.ml-datepicker-button-primary {
-    outline-color: #333;
-    text-decoration: underline; }
-  .ml-datepicker .focus.ml-datepicker-button-primary {
-    box-shadow: 0 0 3px #333, 0 0 7px #333; }
-  .ml-datepicker .ml-datepicker-button-primary:hover,
-  .ml-datepicker .ml-datepicker-button-primary:focus,
-  .ml-datepicker .ml-datepicker-button-primary.hover,
-  .ml-datepicker .ml-datepicker-button-primary.focus {
-    background-color: #0061a0; }
   .ml-datepicker .react-datepicker__triangle {
     margin-left: 162px !important; }
   .ml-datepicker .calendar-styling .react-datepicker__day--selected,

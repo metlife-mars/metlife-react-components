@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import { calendar } from './assets/images'
+import { MLTextInput } from '../MLTextInput';
 
 
 export class SingleDatePicker extends Component {
@@ -80,7 +81,7 @@ export class SingleDatePicker extends Component {
                 <div className="ml-datepicker-container">
 
                     <div className="ml-datepicker-input-container">
-                        <input
+                        {/* <input
                             name="from"
                             className={errors.from.show ? "ml-datepicker-input-error" : "ml-datepicker-input"}
                             type="text"
@@ -88,8 +89,15 @@ export class SingleDatePicker extends Component {
                             value={from}
                             onChange={this.handleInputChange}
                             onBlur={this.onInputBlur}
+                        /> */}
+
+                        <MLTextInput
+                            label="Date of Birth"
+                            value={from}
+                            onChange={this.handleInputChange}
+                            onBlur={this.onInputBlur}
                         />
-                        <span className="ml-datepicker-input-span">Date of Birth</span>
+
                         <DatePicker
                             calendarClassName="calendar-styling"
                             popperPlacement="top-end"

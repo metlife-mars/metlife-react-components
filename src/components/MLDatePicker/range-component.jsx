@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import { calendar } from './assets/images'
+import { MLTextInput } from '../MLTextInput';
 
 
 export class RangeDatePicker extends Component {
@@ -81,16 +82,13 @@ export class RangeDatePicker extends Component {
                 <div className="ml-datepicker-container">
 
                     <div className="ml-datepicker-input-container">
-                        <input
-                            name="from"
-                            className={errors.from.show ? "ml-datepicker-input-error" : "ml-datepicker-input"}
-                            type="text"
-                            placeholder={placeholder}
+                        <MLTextInput
+                            label="From"
                             value={from}
+                            placeholder={placeholder}
                             onChange={this.handleInputChange}
                             onBlur={this.onInputBlur}
                         />
-                        <span className="ml-datepicker-input-span">From</span>
                         <DatePicker
                             calendarClassName="calendar-styling"
                             popperPlacement="top-end"
@@ -119,16 +117,13 @@ export class RangeDatePicker extends Component {
                     {errors.from.show ? <span className="ml-datepicker-error-message-active">{errors.from.message}</span> : <span className="ml-datepicker-error-message" />}
 
                     <div className="ml-datepicker-input-container">
-                        <input
-                            name="to"
-                            className={errors.to.show ? "ml-datepicker-input-error" : "ml-datepicker-input"}
-                            type="text"
-                            placeholder={placeholder}
+                        <MLTextInput
+                            label="To"
                             value={to}
+                            placeholder={placeholder}
                             onChange={this.handleInputChange}
                             onBlur={this.onInputBlur}
                         />
-                        <span className="ml-datepicker-input-span">To</span>
                         <DatePicker
                             calendarClassName="calendar-styling"
                             popperPlacement="top-end"

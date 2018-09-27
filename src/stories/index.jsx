@@ -15,6 +15,7 @@ import {
     MLDropdownStory,
     MLDatePickerStory,
     MLTableStory,
+    MLTextInputStory,
 } from '../components';
 
 const styles = {
@@ -85,8 +86,9 @@ MLButtonStory(storiesOf, module, ContainerDecorator);
 MLCheckboxStory(storiesOf, module, ContainerDecoratorWithDesc);
 MLRadioButtonStory(storiesOf, module, ContainerDecoratorWithDesc);
 MLRadioGroupStory(storiesOf, module, ContainerDecorator);
+MLTextInputStory(storiesOf, module, ContainerDecorator);
 MLSelectStory(storiesOf, module, ContainerDecorator);
 MLDropdownStory(storiesOf, module, ContainerDecorator);
-MLDatePickerStory(storiesOf, module, ContainerDecoratorWithDesc);
+MLDatePickerStory(storiesOf, module, ContainerDecorator);
 MLTableStory(storiesOf, module, ContainerDecorator);
 

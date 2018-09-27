@@ -7,12 +7,10 @@ import MLDatePicker from '../component';
 /**
  * Storybook for MLTabs
  */
-export default (storiesOf, module, ContainerDecoratorWithDesc) => {
+export default (storiesOf, module, ContainerDecorator) => {
 
 storiesOf('DatePicker', module)
-  .addDecorator(ContainerDecoratorWithDesc(
-    'NOTE: This Checkbox is a controlled component'
-  ))
+  .addDecorator(ContainerDecorator)
   .addWithInfo('with single picker', () => <MLDatePicker onChange={action('onChange')} />)
   .addWithInfo('with range picker', () => <MLDatePicker rangePicker onChange={action('onChange')} />)
   .addWithInfo('with preselected date props', () => {
