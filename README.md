@@ -62,7 +62,8 @@ npm run storybook
 * [ ] [WCAG 2.0 Level AA Compliant](https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0)
 
 ### DatePicker
-* [ ] Works
+* [x] SinglePicker Works [Storybook](https://metlife-mars.github.io/metlife-react-components/?selectedKind=DatePicker&selectedStory=with%20single%20picker&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+* [ ] RangePicker Works
 * [ ] Linted
 * [ ] Unit Tested
 * [ ] [WCAG 2.0 Level AA Compliant](https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0)
