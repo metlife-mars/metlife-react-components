@@ -168,6 +168,104 @@
   }
 
 
+
+// START column sorting
+$gray: #333;
+.column-header {
+  border: none;
+  // width: 150px;
+  width: 100%;
+  display: flex;
+  padding: 0;
+
+  div {
+    &.sort-by {
+      display: flex;
+      align-items: center;
+      
+      i {
+        position: relative;
+        padding-right: 15px;
+        
+        width: 8px;
+        height: 8px;
+        &:before,
+        &:after {
+          border: 4px solid transparent;
+          content: '';
+          display: block;
+          height: 0;
+          position: absolute;
+          right: 0;
+          top: -4px;
+          width: 0;
+        }
+
+        &:before {
+          border-bottom-color: $gray;
+          margin-top: 0;
+        }
+
+        &:after {
+          border-top-color: $gray;
+          margin-top: 10px;
+        }
+      }
+      
+      // START sort direction
+      &.desc {
+        i:before {
+          display: none;
+        }
+      }
+    
+      &.asc {
+        i:after {
+          display: none;
+        }
+      }
+      // END sort direction
+    }
+
+    // if you want to change look of the title
+    // for the column used for sorting
+    &.active {
+        font-weight: bold;
+    }
+  }
+}
+
+// remove default sort style
+.rt-thead .rt-th.-sort-desc,
+.rt-thead .rt-th.-sort-asc {
+  box-shadow: none;
+}
+
+.-sort-desc {
+  .column-header {
+    div {
+      &.sort-by {
+        i:before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+.-sort-asc {
+  .column-header {
+    div {
+      &.sort-by {
+        i:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+// END column sorting
+
+
   /* =============== Table header Rows ================= */
   // .ReactTable > .rt-table > .rt-tbody > .rt-tr-group > .rt-tr {
   //   background: #fff;

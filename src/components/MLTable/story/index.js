@@ -5,24 +5,42 @@ export const columns = [
     {
         Header: 'Coverage',
         accessor: 'coverage',
-        className: ''
+        sortable: false,
     },
     {
-        Header: 'Collected Premium',
+        Header: () => (
+            <div className="column-header">
+                <div>Collected Premium</div>
+                <div className="sort-by"> <i></i> </div>
+            </div>
+          ),
         accessor: 'collectedPremium',
-        className: ''
     },
     {
-        Header: 'Effective Date',
+        Header: () => (
+            <div className="column-header">
+                <div>Effective Date</div>
+                <div className="sort-by"> <i></i> </div>
+            </div>
+          ),
         accessor: 'effectiveDate',
-        className: ''
     },
     {
-        Header: 'Renewal Date',
+        Header: () => (
+            <div className="column-header">
+                <div>Renewal Date</div>
+                <div className="sort-by"> <i></i> </div>
+            </div>
+          ),
         accessor: 'renewalDate'
     },
     {
-        Header: 'Enrolled Lives',
+        Header: () => (
+            <div className="column-header">
+                <div>Enrolled Lives</div>
+                <div className="sort-by"> <i></i> </div>
+            </div>
+          ),
         accessor: 'enrolledLives',
         Cell: props => <span className="number">{props.value}</span> // Custom cell components!
     },
@@ -56,11 +74,7 @@ export const brokerColumns = [
     },
     {
         Header: 'Broker',
-        // accessor: 'broker',
-        id: 'broker',
-        accessor: d => d.broker.name,
-        // Cell: props => props.value ? <span className="broker">{props.value.name} <br /> {props.value}</span> : null,
-
+        accessor: 'broker',
     },
     {
         Header: 'Commission Split %',
@@ -78,76 +92,59 @@ export const brokerColumns = [
     },
     {
         Header: 'Firm Business Address',
-        // accessor: 'businessAddress',
-        id: 'businessAddress',
-        accessor: d => d.businessAddress.city,
-        // Cell: props => <span className="year">{props.value.city} {props.value.state} <br /> {props.value.zipcode}</span>
+        accessor: 'businessAddress',
     },
 ];
 
 export const brokerRows = [{
     coverage: 'Basic Life',
-    broker: { id: '1', name: 'Jane Smith', licenseType: 'Broker' },
+    broker: 'Jane Smith \nBroker',
     split: '70%',
     firmName: '<firm name>',
     taxId: '<****-4789>',
-    businessAddress: {
-        id: '2', city: '<City>', state: '<State>', zipcode: '<Zipcode>'
-    },
+    businessAddress: '<City> <State> \n<Zipcode>',
 }, {
     coverage: 'Supplemental Life/AD&D',
-    broker: { id: '3', name: 'Bb Smith', licenseType: 'GA' },
+    broker: 'Bb Smith \nGA',
     split: '30%',
     firmName: '<firm name>',
     taxId: '<****-4789>',
-    businessAddress: {
-        id: '4', city: '<City>', state: '<State>', zipcode: '<Zipcode>'
-    },
+    businessAddress: '<City> <State> \n<Zipcode>',
 }, {
     coverage: 'Basic Life',
-    broker: { id: '3', name: 'Bob Smith', licenseType: 'GA' },
+    broker: 'Bob Smith \nGA',
     split: '30%',
     firmName: '<firm name>',
     taxId: '<****-4789>',
-    businessAddress: {
-        id: '4', city: '<City>', state: '<State>', zipcode: '<Zipcode>'
-    },
+    businessAddress: '<City> <State> \n<Zipcode>',
 }, {
     coverage: 'Supplemental Life/AD&D',
-    broker: { id: '3', name: 'Ab Smith', licenseType: 'GA' },
+    broker: 'Ab Smith \nGA',
     split: '30%',
     firmName: '<firm name>',
     taxId: '<****-4789>',
-    businessAddress: {
-        id: '4', city: '<City>', state: '<State>', zipcode: '<Zipcode>'
-    },
+    businessAddress: '<City> <State> \n<Zipcode>',
 }, {
     coverage: 'Supplemental Life/AD&D',
-    broker: { id: '3', name: 'Cb Smith', licenseType: 'GA' },
+    broker: 'Cb Smith \nGA',
     split: '30%',
     firmName: '<firm name>',
     taxId: '<****-4789>',
-    businessAddress: {
-        id: '4', city: '<City>', state: '<State>', zipcode: '<Zipcode>'
-    },
+    businessAddress: '<City> <State> \n<Zipcode>',
 }, {
     coverage: 'Supplemental Life/AD&D',
-    broker: { id: '3', name: 'Jerald Smith', licenseType: 'GA' },
+    broker: 'Jerald Smith \nGA',
     split: '10%',
     firmName: '<firm name>',
     taxId: '<****-4789>',
-    businessAddress: {
-        id: '4', city: '<City>', state: '<State>', zipcode: '<Zipcode>'
-    },
+    businessAddress: '<City> <State> \n<Zipcode>',
 }, {
     coverage: 'Supplemental Life/AD&D',
-    broker: { id: '3', name: 'Jerald Smith', licenseType: 'GA' },
+    broker: 'Jerald Smith \nGA',
     split: '10%',
     firmName: '<firm name>',
     taxId: '<****-4789>',
-    businessAddress: {
-        id: '4', city: '<City>', state: '<State>', zipcode: '<Zipcode>'
-    },
+    businessAddress: '<City> <State> \n<Zipcode>',
 }];
 
 /**
@@ -190,7 +187,7 @@ export default (storiesOf, module, ContainerDecorator) => {
         () => (
             <MLTable
                 groupBy="coverage"
-                icons={{ 'Supplemental Life/AD&D': 'assets/patterns/img/tables/grouping/i_accident.png', 'Basic Life': 'assets/patterns/img/tables/grouping/i_life.png' }}
+                icons={[{ groupName: 'Supplemental Life/AD&D', icon:'assets/patterns/img/tables/grouping/i_accident.png' }, { groupName: 'Basic Life', icon: 'assets/patterns/img/tables/grouping/i_life.png' }]}
                 defaultIcon="assets/patterns/img/tables/grouping/i_life.png"
                 title="Life"
                 columns={brokerColumns}

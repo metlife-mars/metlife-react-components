@@ -1226,7 +1226,9 @@ label input[type=checkbox] + span {
 .ml-text-input {
   position: relative;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  min-width: 250px;
+  width: 250px; }
   .ml-text-input label {
     position: relative;
     display: flex;
@@ -1238,7 +1240,7 @@ label input[type=checkbox] + span {
       line-height: 17px;
       outline: none;
       padding: 10px;
-      width: 230px; }
+      width: 100%; }
       .ml-text-input label input[type=text]:focus {
         border: solid 1px #007abc; }
       .ml-text-input label input[type=text]:focus + span {
@@ -1927,3 +1929,44 @@ label input[type=checkbox] + span {
         white-space: pre-line; }
   .ml-table.left-position .rt-table .rt-tr .rt-th, .ml-table.left-position .rt-table .rt-tr th, .ml-table.left-position .rt-table .rt-tr .rt-td, .ml-table.left-position .rt-table .rt-tr td, .ml-table.left-position .rt-table tr .rt-th, .ml-table.left-position .rt-table tr th, .ml-table.left-position .rt-table tr .rt-td, .ml-table.left-position .rt-table tr td, .ml-table.left-position table .rt-tr .rt-th, .ml-table.left-position table .rt-tr th, .ml-table.left-position table .rt-tr .rt-td, .ml-table.left-position table .rt-tr td, .ml-table.left-position table tr .rt-th, .ml-table.left-position table tr th, .ml-table.left-position table tr .rt-td, .ml-table.left-position table tr td {
     text-align: left; }
+  .ml-table .column-header {
+    border: none;
+    width: 100%;
+    display: flex;
+    padding: 0; }
+    .ml-table .column-header div.sort-by {
+      display: flex;
+      align-items: center; }
+      .ml-table .column-header div.sort-by i {
+        position: relative;
+        padding-right: 15px;
+        width: 8px;
+        height: 8px; }
+        .ml-table .column-header div.sort-by i:before, .ml-table .column-header div.sort-by i:after {
+          border: 4px solid transparent;
+          content: '';
+          display: block;
+          height: 0;
+          position: absolute;
+          right: 0;
+          top: -4px;
+          width: 0; }
+        .ml-table .column-header div.sort-by i:before {
+          border-bottom-color: #333;
+          margin-top: 0; }
+        .ml-table .column-header div.sort-by i:after {
+          border-top-color: #333;
+          margin-top: 10px; }
+      .ml-table .column-header div.sort-by.desc i:before {
+        display: none; }
+      .ml-table .column-header div.sort-by.asc i:after {
+        display: none; }
+    .ml-table .column-header div.active {
+      font-weight: bold; }
+  .ml-table .rt-thead .rt-th.-sort-desc,
+  .ml-table .rt-thead .rt-th.-sort-asc {
+    box-shadow: none; }
+  .ml-table .-sort-desc .column-header div.sort-by i:before {
+    display: none; }
+  .ml-table .-sort-asc .column-header div.sort-by i:after {
+    display: none; }

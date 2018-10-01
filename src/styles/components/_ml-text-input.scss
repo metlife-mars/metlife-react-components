@@ -11,6 +11,7 @@
   display: flex;
   flex-wrap: wrap;
   min-width: 250px;
+  width: 250px;
 
   label {
     position: relative;
@@ -25,7 +26,7 @@
         line-height: 17px;
         outline: none; // ** bad for accessibility **
         padding: 10px;
-        width: 250px;
+        width: 100%;
 
         &:focus {
           border: solid 1px $input-focus-border;

@@ -4,6 +4,7 @@ import assign from 'lodash/assign';
 
 import ReactTable from 'react-table';
 import treeTableHOC from 'react-table/lib/hoc/treeTable';
+import { rowShape } from './component-simple-table';
 
 const TreeTable = treeTableHOC(ReactTable);
 
@@ -29,7 +30,9 @@ export const MLGroupingTable = ({
             showPagination={false}
             expanded={expanded}
             PivotComponent={({ value }) => {
-                const icon = icons ? icons[value] : defaultIcon;
+                const iconWrapper = icons.find(i => i.groupName === value);
+                const icon = iconWrapper ? iconWrapper.icon : defaultIcon;
+
                 return (
                     <span style={{ display: 'flex', paddingLeft: 20 }}>
                         {icon && (
@@ -50,8 +53,14 @@ export const MLGroupingTable = ({
 MLGroupingTable.propTypes = {
     columns: PropTypes.arrayOf(
         PropTypes.shape({
-            accessor: PropTypes.string,
-            Cell: PropTypes.node,
+            accessor: PropTypes.oneOfType([
+                PropTypes.func,
+                PropTypes.string
+            ]),
+            Cell: PropTypes.oneOfType([
+                PropTypes.func,
+                PropTypes.node
+            ]),
             className: PropTypes.string,
             Header: PropTypes.oneOfType([
                 PropTypes.string,
@@ -62,8 +71,13 @@ MLGroupingTable.propTypes = {
     ),
     defaultIcon: PropTypes.string.isRequired,
     groupBy: PropTypes.string.isRequired,
-    icons: PropTypes.arrayOf(PropTypes.any),
-    rows: PropTypes.arrayOf(PropTypes.any),
+    icons: PropTypes.arrayOf(PropTypes.shape({
+        icon: PropTypes.string,
+        groupName: PropTypes.string,
+    })),
+    rows: PropTypes.arrayOf(
+        rowShape
+    )
 };
 
 MLGroupingTable.defaultProps = {

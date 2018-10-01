@@ -74,10 +74,15 @@ export class MLTextInputContainer extends Component {
                 label="Click to Search"
             />
         ))
+        .addWithInfo('with placeholder prop', () => (
+            <MLTextInputContainer
+                placeholder="Keyword"
+            />
+        ))
         .addWithInfo('with error props', () => (
             <MLTextInputContainer
                 label="Click to Search"
-                error={{ isShown: true, message: 'Invalid Input' }}
+                error={{ show: true, message: 'Invalid Input' }}
             />
         ));
 };

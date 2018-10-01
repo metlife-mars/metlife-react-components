@@ -1,48 +1,41 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
-import RangeDatePicker from './range-component';
 import SingleDatePicker from './single-component';
 
-
-export class MLDatePicker extends Component {
-    render() {
-        const { rangePicker } = this.props;
-
-        return (
-           
-            rangePicker
-            ? <RangeDatePicker {...this.props} />
-            : <SingleDatePicker {...this.props} />
-
-        );
-    }
+export const MLDatePicker  = (props) => {
+    return (
+        <SingleDatePicker {...props} />
+    );
 }
 
-MLDatePicker.propTypes = {
-    title: PropTypes.string,
+SingleDatePicker.propTypes = {
+    label: PropTypes.string,
     placeholder: PropTypes.string,
+    preSelectedDate: PropTypes.string,
     dateFormat: PropTypes.string,
-    fromDate: PropTypes.object,
-    toDate: PropTypes.object,
-    minDate: PropTypes.object,
-    maxDate: PropTypes.object,
     formatValidators: PropTypes.object,
-    errorObjects: PropTypes.object,
-    onApply: PropTypes.func,
-    onChange: PropTypes.func,
+    errorMessages: PropTypes.object,
+    onChange: PropTypes.func, // onChange({ dateValue: string })
 };
 
-MLDatePicker.defaultProps = {
-    title: "ENTER TITLE HERE:",
-    placeholder: "<MM/DD/YYYY>",
+SingleDatePicker.defaultProps = {
+    label: 'Date Input',
+    placeholder: "MM/DD/YYYY",
+    preSelectedDate: undefined,
     dateFormat: "MM/DD/YYYY",
-    fromDate: null,
-    toDate: null,
-    minDate: null,
-    maxDate: null,
-    onApply: () => {},
+    formatValidators: {
+        hasFullDate(dateValue, dateFormat) {
+            if (moment(dateValue, dateFormat, true).isValid()) return true
+            return false
+        },
+    },
+    errorMessages: {
+        hasFullDate: "Date is malformatted",
+    },
     onChange: () => {},
 };
+
 
 export default MLDatePicker;
